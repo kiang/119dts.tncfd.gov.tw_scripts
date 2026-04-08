@@ -52,7 +52,7 @@ function archiveOldData() {
                 }
 
                 // Move the directory to raw
-                if (file_exists($monthDayDir)) {
+                if (file_exists($monthDayDir) && !file_exists($rawMonthDayPath)) {
                     echo "Archiving {$year}/{$monthDay} to raw folder...\n";
                     rename($monthDayDir, $rawMonthDayPath);
                 }
